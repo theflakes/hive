@@ -1,0 +1,35 @@
+{
+	"listeners":
+	[
+		{
+			"port": 137,
+			"protocol": "udp",
+            "banner": ""
+		},
+		{
+			"port": 138,
+			"protocol": "udp",
+            "banner": ""
+		},
+		{
+			"port": 445,
+			"protocol": "udp",
+            "banner": ""
+		},
+		{
+			"port": 137,
+			"protocol": "tcp",
+            "banner": ""
+		},
+		{
+			"port": 139,
+			"protocol": "tcp",
+            "banner": ""
+		},
+		{
+			"port": 445,
+			"protocol": "tcp",
+            "banner": ""
+		}
+	]
+}

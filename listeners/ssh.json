@@ -1,0 +1,9 @@
+{
+    "listeners": [
+        {
+            "port": 22,
+            "protocol": "tcp",
+            "banner": "SSH Server 1.0"
+        }
+    ]
+}

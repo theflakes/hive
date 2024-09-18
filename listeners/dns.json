@@ -1,0 +1,14 @@
+{
+    "listeners": [
+        {
+            "port": 53,
+            "protocol": "udp",
+            "banner": "DNS Server 1.0"
+        },
+                {
+            "port": 53,
+            "protocol": "tcp",
+            "banner": "DNS Server 1.0"
+        }
+    ]
+}

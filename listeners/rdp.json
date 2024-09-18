@@ -1,0 +1,9 @@
+{
+    "listeners": [
+        {
+            "port": 3389,
+            "protocol": "tcp",
+            "banner": ""
+        }
+    ]
+}
