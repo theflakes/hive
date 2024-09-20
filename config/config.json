@@ -91,6 +91,7 @@
 	"default_logger": "root",
 	"logging": {
 		"version": 1,
+		"directory": "./logs",
 		"formatters": {
 			"standard": {
 				"format": "%(message)s"

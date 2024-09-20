@@ -12,6 +12,7 @@
         sudo pip3 install ipcalc
 """
 
+import os
 import sys
 import json
 import time
@@ -252,6 +253,8 @@ class Honey(object):
 
         if "logger" in config:
             c["logger"] = config["logger"]
+            if not os.path.exists(c["logger"]["directory"]):
+                os.makedirs(c["logger"]["directory"])
         else:
             c["logger"] = default_logger
 
