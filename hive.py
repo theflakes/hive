@@ -296,7 +296,7 @@ def get_parser():
     parser.add_option("-c", "--conf", "--config",
                         action="store",
                         dest="config",
-                        help="JSON config file for service.")
+                        help="JSON config file for Hive running config")
     return parser
 
 
