@@ -1,0 +1,9 @@
+{
+    "listeners": [
+        {
+            "port": 80,
+            "protocol": "tcp",
+            "banner": "HTTP Server 1.0"
+        }
+    ]
+}

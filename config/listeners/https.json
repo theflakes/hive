@@ -1,0 +1,9 @@
+{
+    "listeners": [
+        {
+            "port": 443,
+            "protocol": "tcp",
+            "banner": "HTTPS Server 1.0"
+        }
+    ]
+}
