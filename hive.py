@@ -269,10 +269,10 @@ def main(options):
     with open(options.config, "r") as f:
         conf = json.load(f)
 
+    dictConfig(conf["logging"])
+
     if not os.path.exists(conf["logging"]["directory"]):
         os.makedirs(conf["logging"]["directory"])
-
-    dictConfig(conf["logging"])
 
     logger = logging.getLogger(conf['default_logger'])
     logger.info("Loading the honey: {0}".format(", ".join([h["config"] for h in conf["honey"]])))
