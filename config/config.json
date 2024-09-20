@@ -76,16 +76,8 @@
 	"timeout": 1,
 	"honey": [
 		{
-			"config": "./config/listeners/smb.json",
+			"config": "./config/listeners/ssh.json",
 			"logger": "smb"
-		},
-		{
-			"config": "./config/listeners/rdp.json",
-			"logger": "rdp"
-		},
-		{
-			"config": "./config/listeners/wsman.json",
-			"logger": "wsman"
 		}
 	],
 	"default_logger": "root",
