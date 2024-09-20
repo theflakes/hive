@@ -253,8 +253,8 @@ class Honey(object):
 
         if "logger" in config:
             c["logger"] = config["logger"]
-            if not os.path.exists(c["logging"]["directory"]):
-                os.makedirs(c["logging"]["directory"])
+            if not os.path.exists(c["logger"]["logging"]["directory"]):
+                os.makedirs(c["logger"]["logging"]["directory"])
         else:
             c["logger"] = default_logger
 
