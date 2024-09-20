@@ -263,7 +263,7 @@ class Honey(object):
 
         return cls(**c)
 
-class LoggerConfigManager:
+class LogConfig:
     def __init__(self, conf):
         self.conf = conf
         self.set_logging_location()
@@ -295,7 +295,7 @@ def main(options):
         conf = json.load(f)
 
     #conf = set_logging_location(conf)
-    logs = LoggerConfigManager(conf)
+    logs = LogConfig(conf)
 
     dictConfig(logs.conf["logging"])
 
