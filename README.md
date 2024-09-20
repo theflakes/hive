@@ -5,6 +5,16 @@ This is a modular network honeypot that can run any number of profiles mimiking 
 
 Configuration is in Json and logging is in Json as well.
 
+### Requirements
+```
+sudo pip3 install python-nmap
+# on ubuntu you may need to use apt to install python-nmap
+sudo apt install python-nmap
+sudo pip3 install netifaces
+sudo pip3 install ipaddress
+sudo pip3 install ipcalc
+```
+
 ### Configuration
 ```
 {

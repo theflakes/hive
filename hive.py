@@ -2,10 +2,12 @@
 
 # requires NMAP be installed if using active intel gathering
 # REQUIRED:
-#   pip3 install python-nmap - note, do not use the "nmap" module
-#   pip3 install netifaces
-#   pip3 install ipaddress
-#   pip install ipcalc
+# sudo pip3 install python-nmap
+# on ubuntu you may need to use apt to install python-nmap
+# sudo apt install python-nmap
+# sudo pip3 install netifaces
+# sudo pip3 install ipaddress
+# sudo pip3 install ipcalc
 
 import sys
 import json
@@ -99,7 +101,7 @@ class Conn(object):
         self.server = server
         self.conn_data = {}
         self.conn_data[netinfo.data_type] = netinfo.data_type_value
-        self.conn_data[netinfo.timestamp] = (datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3])
+        self.conn_data[netinfo.timestamp] = (datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3])
         self.conn_data[netinfo.device_name] = netinfo.local_hostname
         self.conn_data[netinfo.src_ip] = conn.client_address[0]
         self.conn_data[netinfo.src_port] = conn.client_address[1]
@@ -237,8 +239,7 @@ class Honey(object):
             if self.logger:
                 server.logger = logging.getLogger(self.logger)
             server.banner = bytes(l.banner, 'ascii')
-            server_thread = threading.Thread(target=server.serve_forever)
-            server_thread.setDaemon(True)
+            server_thread = threading.Thread(target=server.serve_forever, daemon=True)
             server_thread.start()
 
     @classmethod
