@@ -251,8 +251,10 @@ class Honey(object):
         with open(config, "r") as f:
             c = json.load(f)
 
-        if not os.path.exists(c["logging"]["directory"]):
-                os.makedirs(c["logging"]["directory"])
+        if "logger" in config:
+            c["logger"] = config["logger"]
+            if not os.path.exists(c["logger"]):
+                os.makedirs(c["logger"])
         else:
             c["logger"] = default_logger
 
