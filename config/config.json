@@ -77,7 +77,7 @@
 	"honey": [
 		{
 			"config": "./config/listeners/ssh.json",
-			"logger": "smb"
+			"logger": "basic"
 		}
 	],
 	"default_logger": "root",
@@ -104,6 +104,15 @@
 				"formatter": "standard",
 				"class": "logging.StreamHandler"
 			},
+			"rdp": {
+				"level": "INFO",
+				"formatter": "standard",
+				"class": "logging.handlers.RotatingFileHandler",
+				"filename": "./logs/rdp.log",
+				"mode": "a",
+				"maxBytes": 10485760,
+				"backupCount": 5
+			},
 			"smb": {
 				"level": "INFO",
 				"formatter": "standard",
@@ -113,11 +122,11 @@
 				"maxBytes": 10485760,
 				"backupCount": 5
 			},
-			"rdp": {
+			"ssh": {
 				"level": "INFO",
 				"formatter": "standard",
 				"class": "logging.handlers.RotatingFileHandler",
-				"filename": "./logs/rdp.log",
+				"filename": "./logs/wsman.log",
 				"mode": "a",
 				"maxBytes": 10485760,
 				"backupCount": 5
@@ -138,18 +147,8 @@
 				"level": "INFO",
 				"propagate": true
 			},
-			"smb": {
-				"handlers": ["smb"],
-				"level": "INFO",
-				"propagate": true
-			},
-			"rdp": {
-				"handlers": ["rdp"],
-				"level": "INFO",
-				"propagate": true
-			},
-			"wsman": {
-				"handlers": ["wsman"],
+			"ssh": {
+				"handlers": ["ssh"],
 				"level": "INFO",
 				"propagate": true
 			}

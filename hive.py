@@ -24,7 +24,7 @@ from optparse import OptionParser
 import socket
 import netifaces
 import nmap
-from datetime import datetime
+from datetime import datetime, timezone
 import ipaddress
 import ipcalc
 
@@ -105,7 +105,7 @@ class Conn(object):
         self.server = server
         self.conn_data = {}
         self.conn_data[netinfo.data_type] = netinfo.data_type_value
-        self.conn_data[netinfo.timestamp] = (datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3])
+        self.conn_data[netinfo.timestamp] = (datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3])
         self.conn_data[netinfo.device_name] = netinfo.local_hostname
         self.conn_data[netinfo.src_ip] = conn.client_address[0]
         self.conn_data[netinfo.src_port] = conn.client_address[1]
