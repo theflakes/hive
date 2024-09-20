@@ -253,9 +253,6 @@ class Honey(object):
 
         if "logger" in config:
             c["logger"] = config["logger"]
-            d = os.path.dirname(c["logger"])
-            if not os.path.exists(d):
-                os.makedirs(d)
         else:
             c["logger"] = default_logger
 
@@ -280,6 +277,9 @@ def main(options):
     honey = []
 
     netinfo = NetInfo(conf)
+
+    if not os.path.exists(log_directory):
+        os.makedirs(conf["logging"]["directory"])
 
     for h in conf["honey"]:
         honey.append(Honey.load_from_file(h["config"], h["logger"]))
