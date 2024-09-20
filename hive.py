@@ -278,7 +278,7 @@ def main(options):
 
     netinfo = NetInfo(conf)
 
-    if not os.path.exists(log_directory):
+    if not os.path.exists(conf["logging"]["directory"]):
         os.makedirs(conf["logging"]["directory"])
 
     for h in conf["honey"]:
