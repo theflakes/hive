@@ -269,6 +269,9 @@ def main(options):
     with open(options.config, "r") as f:
         conf = json.load(f)
 
+    if not os.path.exists(conf["logging"]["directory"]):
+        os.makedirs(conf["logging"]["directory"])
+
     dictConfig(conf["logging"])
 
     logger = logging.getLogger(conf['default_logger'])
@@ -277,9 +280,6 @@ def main(options):
     honey = []
 
     netinfo = NetInfo(conf)
-
-    if not os.path.exists(conf["logging"]["directory"]):
-        os.makedirs(conf["logging"]["directory"])
 
     for h in conf["honey"]:
         honey.append(Honey.load_from_file(h["config"], h["logger"]))
