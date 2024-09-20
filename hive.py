@@ -266,7 +266,7 @@ class Honey(object):
         return cls(**c)
 
 
-def main(args):
+def main(options):
     global netinfo
     with open(options.config, "r") as f:
         conf = json.load(f)
