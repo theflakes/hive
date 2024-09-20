@@ -1,9 +1,0 @@
-{
-    "listeners": [
-        {
-            "port": 25,
-            "protocol": "tcp",
-            "banner": "SMTP Server 1.0"
-        }
-    ]
-}

@@ -1,9 +1,0 @@
-{
-    "listeners": [
-        {
-            "port": 5985,
-            "protocol": "tcp",
-            "banner": ""
-        }
-    ]
-}

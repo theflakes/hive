@@ -19,7 +19,7 @@ sudo pip3 install ipcalc
 ```
 {
 	"reverse_dns": true,        # Do a reverse lookup on any IP touching Hive
-	"l2_attribution": true,     # Run nmap against IP that touched Hive
+	"l2_attribution": true,     # Run nmap against IP that touched Hive to attempt Mac retrieval
 	"field_names": {
 		"data_type": {
 			"name": "data_type",

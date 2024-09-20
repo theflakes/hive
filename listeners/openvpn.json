@@ -1,9 +1,0 @@
-{
-    "listeners": [
-        {
-            "port": 1194,
-            "protocol": "udp",
-            "banner": "OpenVPN Server 1.0"
-        }
-    ]
-}

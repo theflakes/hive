@@ -1,13 +1,16 @@
 #!/usr/bin/python3
 
-# requires NMAP be installed if using active intel gathering
-# REQUIRED:
-# sudo pip3 install python-nmap
-# on ubuntu you may need to use apt to install python-nmap
-# sudo apt install python-nmap
-# sudo pip3 install netifaces
-# sudo pip3 install ipaddress
-# sudo pip3 install ipcalc
+"""
+    requires NMAP be installed if using active intel gathering
+
+    REQUIRED:
+        sudo pip3 install python-nmap
+        on ubuntu you may need to use apt to install python-nmap
+        sudo apt install python-nmap
+        sudo pip3 install netifaces
+        sudo pip3 install ipaddress
+        sudo pip3 install ipcalc
+"""
 
 import sys
 import json
