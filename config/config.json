@@ -160,6 +160,11 @@
 				"level": "INFO",
 				"propagate": true
 			},
+			"https": {
+				"handlers": ["https"],
+				"level": "INFO",
+				"propagate": true
+			},
 			"ssh": {
 				"handlers": ["ssh"],
 				"level": "INFO",
