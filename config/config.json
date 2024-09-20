@@ -76,6 +76,10 @@
 	"timeout": 1,
 	"honey": [
 		{
+			"config": "./config/listeners/https.json",
+			"logger": "https"
+		},
+		{
 			"config": "./config/listeners/ssh.json",
 			"logger": "ssh"
 		}
@@ -104,6 +108,15 @@
 				"formatter": "standard",
 				"class": "logging.StreamHandler"
 			},
+			"https": {
+				"level": "INFO",
+				"formatter": "standard",
+				"class": "logging.handlers.RotatingFileHandler",
+				"filename": "https.log",
+				"mode": "a",
+				"maxBytes": 10485760,
+				"backupCount": 5
+			},
 			"rdp": {
 				"level": "INFO",
 				"formatter": "standard",
@@ -126,7 +139,7 @@
 				"level": "INFO",
 				"formatter": "standard",
 				"class": "logging.handlers.RotatingFileHandler",
-				"filename": "wsman.log",
+				"filename": "ssh.log",
 				"mode": "a",
 				"maxBytes": 10485760,
 				"backupCount": 5

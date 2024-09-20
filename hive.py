@@ -262,17 +262,35 @@ class Honey(object):
         c["listeners"] = listeners
 
         return cls(**c)
-
+    
+def remove_unused_handlers(conf):
+    used_handlers = set()
+    for _, logger_config in conf["logging"]["loggers"].items():
+        if "handlers" in logger_config:
+            used_handlers.update(logger_config["handlers"])
+    handlers_to_remove = [handler_name for handler_name in conf["logging"]["handlers"] if handler_name not in used_handlers]
+    for handler_name in handlers_to_remove:
+        del conf["logging"]["handlers"][handler_name]
+    return conf
+    
+def set_logging_location(conf):
+    log_dir = conf["logging"]["directory"]
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+    conf = remove_unused_handlers(conf)
+    for _, h_config in conf["logging"]["handlers"].items():
+        if "filename" in h_config:
+            h_config['filename'] = log_dir + '/' + h_config['filename']
+    return conf
 
 def main(options):
     global netinfo
     with open(options.config, "r") as f:
         conf = json.load(f)
 
-    dictConfig(conf["logging"])
+    conf = set_logging_location(conf)
 
-    if not os.path.exists(conf["logging"]["directory"]):
-        os.makedirs(conf["logging"]["directory"])
+    dictConfig(conf["logging"])
 
     logger = logging.getLogger(conf['default_logger'])
     logger.info("Loading the honey: {0}".format(", ".join([h["config"] for h in conf["honey"]])))
