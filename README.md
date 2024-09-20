@@ -115,7 +115,7 @@ sudo pip3 install ipcalc
 				"format": "%(message)s"
 			}
 		},
-		"handlers": {
+		"handlers": { # configuration for each log file
 			"error": {
 				"level": "ERROR",
 				"formatter": "standard",
@@ -164,8 +164,8 @@ sudo pip3 install ipcalc
 				"level": "INFO",
 				"propagate": true
 			},
-			"smb": {
-				"handlers": ["smb"],
+			"smb": { 					# per honey logging file
+				"handlers": ["smb"],	# above handler for the log file
 				"level": "INFO",
 				"propagate": true
 			},
