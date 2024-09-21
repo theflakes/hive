@@ -16,6 +16,9 @@ sudo pip3 install ipcalc
 ```
 
 ### Configuration
+You can rename the default field names in the field_names part of the Json config.  
+
+Each honey / listener points to a logger and each logger points to a handler.  
 ```json
 {
 	"reverse_dns": true, # Do a reverse lookup on any IP touching Hive
