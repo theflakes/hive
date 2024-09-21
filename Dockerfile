@@ -3,7 +3,7 @@ FROM ubuntu:latest
 
 # Install necessary packages
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip systemd python-nmap
+    apt-get install -y nmap python3 python3-pip systemd python3-nmap
 
 # Install Python packages
 RUN pip3 install python-nmap netifaces ipaddress ipcalc
