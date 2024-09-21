@@ -1,5 +1,5 @@
 # Use the official Ubuntu Python image
-FROM ubuntu/python:3.12-24.04_stable
+FROM ubuntu:latest
 
 # Install necessary packages
 RUN apt-get update && \
