@@ -18,8 +18,8 @@ sudo pip3 install ipcalc
 ### Configuration
 ```json
 {
-	"reverse_dns": true,        # Do a reverse lookup on any IP touching Hive
-	"l2_attribution": false,    # Run nmap against IP that touched Hive to attempt Mac retrieval
+	"reverse_dns": true, # Do a reverse lookup on any IP touching Hive
+	"l2_attribution": false, # Run nmap against IP that touched Hive to attempt Mac retrieval
 	"field_names": {
 		"data_type": {
 			"name": "data_type",
@@ -82,7 +82,7 @@ sudo pip3 install ipcalc
 			"default": null
 		}
 	},
-	"ll_mcast": [   # Ignore Link Local Multicast traffic on these protos and ports
+	"ll_mcast": [ # Ignore Link Local Multicast traffic on these protos and ports
 		{
 			"protocol": "tcp",
 			"ports": []
@@ -93,7 +93,7 @@ sudo pip3 install ipcalc
 		}
 	],
 	"timeout": 1,
-	"honey": [  # Services to mimick
+	"honey": [ # Services to mimick
 		{
 			"config": "./listeners/smb.json",
 			"logger": "smb"
