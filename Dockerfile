@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get install -y nmap python3 python3-pip systemd python3-nmap
 
 # Install Python packages
-RUN pip3 --user install python-nmap netifaces ipaddress ipcalc
+RUN pip3 install --user python-nmap netifaces ipaddress ipcalc
 
 # Create the /opt/hive directory
 RUN mkdir -p /opt/hive
