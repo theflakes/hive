@@ -6,7 +6,7 @@ This is a modular network honeypot that can run any number of profiles mimiking 
 Configuration is in Json and logging is in Json as well.  
 
 ### Requirements
-```
+```bash
 sudo pip3 install python-nmap
 # on ubuntu you may need to use apt to install python-nmap
 sudo apt install python-nmap
@@ -16,7 +16,7 @@ sudo pip3 install ipcalc
 ```
 
 ### Configuration
-```
+```json
 {
 	"reverse_dns": true,        # Do a reverse lookup on any IP touching Hive
 	"l2_attribution": false,    # Run nmap against IP that touched Hive to attempt Mac retrieval
