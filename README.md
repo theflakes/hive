@@ -96,7 +96,7 @@ sudo pip3 install ipcalc
 	"honey": [ # Services to mimick
 		{
 			"config": "./listeners/smb.json",
-			"logger": "smb"
+			"logger": "smb" # entry under loggers to use for this honey trap
 		},
 		{
 			"config": "./listeners/rdp.json",
