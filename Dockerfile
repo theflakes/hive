@@ -1,5 +1,5 @@
 # Use the official Ubuntu Python image
-FROM ubuntu/python:latest
+FROM ubuntu/python
 
 # Install necessary packages
 RUN apt-get update && \
