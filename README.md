@@ -164,8 +164,8 @@ sudo pip3 install ipcalc
 				"level": "INFO",
 				"propagate": true
 			},
-			"smb": {                    # per honey logging file
-				"handlers": ["smb"],	# above handler for the log file
+			"smb": { # per honey logging file
+				"handlers": ["smb"], # above handler for the log file
 				"level": "INFO",
 				"propagate": true
 			},
